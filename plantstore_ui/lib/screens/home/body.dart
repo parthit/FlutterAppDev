@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:plantstore_ui/constants.dart';
+import 'components/header_with_btn.dart';
 import 'components/header_with_search.dart';
 
 class Body extends StatelessWidget {
@@ -7,11 +9,19 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return SingleChildScrollView(
+      reverse: true,
       child: Column(
         children: <Widget>[
           HeaderWithSearchBar(size: size),
           TitleWIthMoreBtn(
             text: "More",
+            pressed: () {},
+          ),
+          RecommendedPlantCard(
+            title: "Samantha",
+            country: "Russia",
+            image: "assets/images/image_1.png",
+            price: 150,
             pressed: () {},
           )
         ],
@@ -20,62 +30,67 @@ class Body extends StatelessWidget {
   }
 }
 
-class TitleWIthMoreBtn extends StatelessWidget {
-  final String text;
+class RecommendedPlantCard extends StatelessWidget {
+
+  final String image, title, country;
+  final int price;
   final Function pressed;
-  TitleWIthMoreBtn({this.text, this.pressed});
+
+  RecommendedPlantCard({this.image,this.title,this.country,this.price,this.pressed});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
-      child: Row(
-        children: [
-          TitleWithUnderline("Recommended"),
-          Spacer(),
-          FlatButton(
-              onPressed: pressed,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20)),
-              color: kPrimaryColor,
-              child: Text(
-                text,
-                style: TextStyle(color: kBackgroundColor),
-              ))
-        ],
-      ),
-    );
-  }
-}
-
-class TitleWithUnderline extends StatelessWidget {
-  final String text;
-  TitleWithUnderline(this.text);
-
-  @override
-  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Container(
-      height: 24,
-      child: Stack(
+      margin: EdgeInsets.only(
+          left: kDefaultPadding,
+          top: kDefaultPadding / 2,
+          bottom: kDefaultPadding * 2.5),
+      width: size.width * 0.4,
+      child: Column(
         children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(left: kDefaultPadding / 4),
-            child: Text(
-              text,
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-          Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
+          Image.asset(image),
+          GestureDetector(
+            onTap: pressed,
             child: Container(
-              margin: EdgeInsets.only(right: kDefaultPadding / 4),
-              height: 7,
-              color: kPrimaryColor.withOpacity(0.2),
+              padding: EdgeInsets.all(kDefaultPadding / 2),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(15),
+                boxShadow: [
+                  BoxShadow(
+                    offset: Offset(0, 10),
+                    blurRadius: 20,
+                    color: kPrimaryColor.withOpacity(0.25),
+                  ),
+                ],
+              ),
+              child: Row(
+                children: <Widget>[
+                  RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                            text: "$title\n".toUpperCase(),
+                            style: Theme.of(context).textTheme.bodyText1),
+                        TextSpan(
+                          text: "$country".toUpperCase(),
+                          style: TextStyle(
+                            color: kPrimaryColor.withOpacity(0.5),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Spacer(),
+                  Text(
+                    "\$$price",
+                    style: TextStyle(
+                      color: kPrimaryColor,
+                    ),
+                  ),
+                ],
+              ),
             ),
           )
         ],
