@@ -12,7 +12,7 @@ class TitleWIthMoreBtn extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
       child: Row(
         children: [
-          TitleWithUnderline("Recommended"),
+          TitleWithUnderline(text),
           Spacer(),
           FlatButton(
               onPressed: pressed,
@@ -20,7 +20,7 @@ class TitleWIthMoreBtn extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20)),
               color: kPrimaryColor,
               child: Text(
-                text,
+                "More",
                 style: TextStyle(color: kBackgroundColor),
               ))
         ],
