@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:plantstore_ui/constants.dart';
 
 import 'home/body.dart';
+import 'home/components/botton_navigation_bar.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -9,6 +11,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: buildAppBar(),
       body: Body(),
+      bottomNavigationBar: CustomBottomNavigationBar(),
     );
   }
 
