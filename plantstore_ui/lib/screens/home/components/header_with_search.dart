@@ -2,8 +2,6 @@ import "package:flutter/material.dart";
 import "package:plantstore_ui/constants.dart";
 import "package:flutter_svg/flutter_svg.dart";
 
-
-
 class HeaderWithSearchBar extends StatelessWidget {
   const HeaderWithSearchBar({
     Key key,
@@ -72,8 +70,7 @@ class HeaderWithSearchBar extends StatelessWidget {
                 onChanged: (value) {},
                 decoration: InputDecoration(
                     hintText: "Search",
-                    hintStyle:
-                    TextStyle(color: kPrimaryColor.withOpacity(0.5)),
+                    hintStyle: TextStyle(color: kPrimaryColor.withOpacity(0.5)),
                     enabledBorder: InputBorder.none,
                     focusedBorder: InputBorder.none,
                     suffixIcon: IconButton(
