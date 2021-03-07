@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 import "package:plantstore_ui/constants.dart";
-
+import 'package:plantstore_ui/screens/details_screen.dart';
 
 class RecommendsPlants extends StatelessWidget {
   const RecommendsPlants({
@@ -18,21 +18,42 @@ class RecommendsPlants extends StatelessWidget {
             country: "Russia",
             image: "assets/images/image_1.png",
             price: 150,
-            pressed: () {},
+            pressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailsScreen(),
+                ),
+              );
+            },
           ),
           RecommendedPlantCard(
             title: "Angelica",
             country: "Japan",
             image: "assets/images/image_2.png",
             price: 250,
-            pressed: () {},
+            pressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailsScreen(),
+                ),
+              );
+            },
           ),
           RecommendedPlantCard(
             title: "Tamitha",
             country: "Algeria",
             image: "assets/images/image_3.png",
             price: 200,
-            pressed: () {},
+            pressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailsScreen(),
+                ),
+              );
+            },
           ),
         ],
       ),
@@ -41,12 +62,12 @@ class RecommendsPlants extends StatelessWidget {
 }
 
 class RecommendedPlantCard extends StatelessWidget {
-
   final String image, title, country;
   final int price;
   final Function pressed;
 
-  RecommendedPlantCard({this.image,this.title,this.country,this.price,this.pressed});
+  RecommendedPlantCard(
+      {this.image, this.title, this.country, this.price, this.pressed});
 
   @override
   Widget build(BuildContext context) {
