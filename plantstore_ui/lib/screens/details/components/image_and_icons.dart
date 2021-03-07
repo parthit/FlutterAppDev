@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:plantstore_ui/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import 'icon_card.dart';
+
 
 class ImageAndIconsCard extends StatelessWidget {
   const ImageAndIconsCard({
