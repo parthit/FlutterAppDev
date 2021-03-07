@@ -22,7 +22,11 @@ class RecommendsPlants extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DetailsScreen(),
+                  builder: (context) => DetailsScreen(
+                    title: "Samantha",
+                    country: "Russia",
+                    price: 150,
+                  ),
                 ),
               );
             },
@@ -36,7 +40,11 @@ class RecommendsPlants extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DetailsScreen(),
+                  builder: (context) => DetailsScreen(
+                    title: "Angelica",
+                    country: "Japan",
+                    price: 250,
+                  ),
                 ),
               );
             },
@@ -50,7 +58,11 @@ class RecommendsPlants extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DetailsScreen(),
+                  builder: (context) => DetailsScreen(
+                    title: "Tamitha",
+                    country: "Algeria",
+                    price: 200,
+                  ),
                 ),
               );
             },

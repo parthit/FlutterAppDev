@@ -4,6 +4,11 @@ import 'components/image_and_icons.dart';
 import 'components/title_and_price.dart';
 
 class DBody extends StatelessWidget {
+  final String title, country;
+  final int price;
+
+  DBody({this.title, this.country, this.price});
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -12,9 +17,9 @@ class DBody extends StatelessWidget {
         children: <Widget>[
           ImageAndIconsCard(size: size),
           TitleAndPrice(
-            title: "Angelica",
-            country: "Russia",
-            price: 150,
+            title: title,
+            country: country,
+            price: price,
           ),
           Row(
             children: <Widget>[
