@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import "package:flutter/material.dart";
 import "package:plantstore_ui/constants.dart";
 
@@ -13,7 +14,8 @@ class TitleAndPrice extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+      padding: const EdgeInsets.only(left: kDefaultPadding, right: kDefaultPadding,
+      bottom: kDefaultPadding),
       child: Row(
         children: <Widget>[
           RichText(

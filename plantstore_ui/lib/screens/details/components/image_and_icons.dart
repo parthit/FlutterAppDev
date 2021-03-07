@@ -60,6 +60,7 @@ class ImageAndIconsCard extends StatelessWidget {
               width: size.width * 0.75,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(60),
                   bottomLeft: Radius.circular(60),
                 ),
                 boxShadow: [
