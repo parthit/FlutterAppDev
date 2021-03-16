@@ -3,6 +3,7 @@ import 'dart:ui';
 import "package:flutter/material.dart";
 import 'package:shopping_bag_ui/constants.dart';
 import 'package:shopping_bag_ui/models/product.dart';
+import 'package:shopping_bag_ui/screen/details_screen.dart';
 import 'package:shopping_bag_ui/screen/home/components/item_card.dart';
 
 import 'Categories.dart';
@@ -17,10 +18,10 @@ class HomeScreenBody extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
           child: Text(
             "Women",
-            style: Theme.of(context)
-                .textTheme
-                .headline5
-                .copyWith(fontWeight: FontWeight.bold, color: kTextColor, letterSpacing: 1),
+            style: Theme.of(context).textTheme.headline5.copyWith(
+                fontWeight: FontWeight.bold,
+                color: kTextColor,
+                letterSpacing: 1),
           ),
         ),
         Categories(),
@@ -36,8 +37,12 @@ class HomeScreenBody extends StatelessWidget {
                 crossAxisSpacing: kDefaultPadding,
               ),
               itemBuilder: (context, index) => ItemCard(
-                product: products[index],
-              ),
+                  product: products[index],
+                  pressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              DetailsScreen(product: products[index])))),
             ),
           ),
         ),
