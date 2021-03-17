@@ -2,6 +2,7 @@ import "package:flutter/material.dart";
 import 'package:shopping_bag_ui/constants.dart';
 import 'package:shopping_bag_ui/models/product.dart';
 
+import 'ColorAndSize.dart';
 import 'ProductTitleWithImage.dart';
 
 class DetailsBody extends StatelessWidget {
@@ -20,12 +21,19 @@ class DetailsBody extends StatelessWidget {
               children: <Widget>[
                 Container(
                   margin: EdgeInsets.only(top: size.height * 0.3),
-                  height: 500,
+                  padding: EdgeInsets.only(
+                      top: size.height * 0.15, left: kDefaultPadding),
+                  //height: 500,
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
                           topRight: Radius.circular(35),
                           topLeft: Radius.circular(35))),
+                  child: Column(
+                    children: <Widget>[
+                      ColorAndSize(product: product),
+                    ],
+                  ),
                 ),
                 ProductTitleWithImage(product: product)
               ],
