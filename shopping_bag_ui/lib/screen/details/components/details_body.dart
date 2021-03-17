@@ -4,6 +4,7 @@ import 'package:shopping_bag_ui/models/product.dart';
 
 import 'ColorAndSize.dart';
 import 'ProductTitleWithImage.dart';
+import 'description.dart';
 
 class DetailsBody extends StatelessWidget {
   final Product product;
@@ -32,10 +33,11 @@ class DetailsBody extends StatelessWidget {
                   child: Column(
                     children: <Widget>[
                       ColorAndSize(product: product),
+                      Description(product: product)
                     ],
                   ),
                 ),
-                ProductTitleWithImage(product: product)
+                ProductTitleWithImage(product: product),
               ],
             ),
           )
