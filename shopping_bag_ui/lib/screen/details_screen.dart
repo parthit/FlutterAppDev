@@ -15,7 +15,9 @@ class DetailsScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: product.color,
       appBar: buildAppBar(context),
-      body: DetailsBody(),
+      body: DetailsBody(
+        product: product,
+      ),
     );
   }
 
@@ -30,12 +32,13 @@ class DetailsScreen extends StatelessWidget {
         ),
         onPressed: () => Navigator.pop(context),
       ),
-
       actions: <Widget>[
-        IconButton(icon: SvgPicture.asset("assets/icons/search.svg"), onPressed: (){}),
-        IconButton(icon: SvgPicture.asset("assets/icons/cart.svg"), onPressed: (){}),
-        SizedBox(width: kDefaultPadding/2),
-
+        IconButton(
+            icon: SvgPicture.asset("assets/icons/search.svg"),
+            onPressed: () {}),
+        IconButton(
+            icon: SvgPicture.asset("assets/icons/cart.svg"), onPressed: () {}),
+        SizedBox(width: kDefaultPadding / 2),
       ],
     );
   }
