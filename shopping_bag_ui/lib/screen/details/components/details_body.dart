@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import 'package:shopping_bag_ui/constants.dart';
 import 'package:shopping_bag_ui/models/product.dart';
+import 'package:shopping_bag_ui/screen/details/components/counter_with_fav_button.dart';
 
 import 'ColorAndSize.dart';
 import 'ProductTitleWithImage.dart';
@@ -35,7 +36,8 @@ class DetailsBody extends StatelessWidget {
                     children: <Widget>[
                       ColorAndSize(product: product),
                       Description(product: product),
-                      CartCounter()
+                      SizedBox(height: kDefaultPadding/2,),
+                      CounterWithFavBtn(),
                     ],
                   ),
                 ),
