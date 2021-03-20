@@ -5,6 +5,7 @@ import 'package:shopping_bag_ui/screen/details/components/counter_with_fav_butto
 
 import 'ColorAndSize.dart';
 import 'ProductTitleWithImage.dart';
+import 'add_to_cart.dart';
 import 'cart_counter.dart';
 import 'description.dart';
 
@@ -38,6 +39,8 @@ class DetailsBody extends StatelessWidget {
                       Description(product: product),
                       SizedBox(height: kDefaultPadding/2,),
                       CounterWithFavBtn(),
+                      SizedBox(height: kDefaultPadding / 2),
+                      AddToCart(product: product)
                     ],
                   ),
                 ),
