@@ -10,7 +10,9 @@ User Interface for Shopping Store
   <tr>
     <td>Icon</td>
     <td>Home Page</td>
-    <td>Details Page</td>
+    <td>Details Page Blue Bag</td>
+    <td>Details Page Brown Bag</td>
+    <td>Details Page Gray Bag</td>
   </tr>
   <tr>
     <td><img src="https://github.com/parthit/FlutterAppDev/blob/main/shopping_bag_ui/screenshots/Home.png" width=300/></td>
